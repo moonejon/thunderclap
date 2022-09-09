@@ -1,5 +1,5 @@
-import { WeatherIcon } from "./WeatherIcon";
 import _ from "lodash";
+import { WeatherIcon } from "./WeatherIcon";
 
 export const CurrentConditions = props => {
 

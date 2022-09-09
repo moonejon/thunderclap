@@ -1,10 +1,10 @@
 import { useEffect, useState } from "react";
 import Geocode from "react-geocode";
-import cityImage from "./assets/Dallas.png";
-import "./App.css";
 import { ForecastContainer } from "./components/ForecastContainer";
 import { CurrentConditions } from "./components/CurrentConditions";
 import { Toggle } from "./components/Toggle";
+import cityImage from "./assets/Dallas.png";
+import "./App.css";
 
 function App() {
   const [coordinates, setCoordinates] = useState({ lat: null, lng: null });
