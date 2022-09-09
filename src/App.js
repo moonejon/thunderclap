@@ -3,6 +3,7 @@ import Geocode from "react-geocode";
 import { ForecastContainer } from "./components/ForecastContainer";
 import { CurrentConditions } from "./components/CurrentConditions";
 import { Toggle } from "./components/Toggle";
+import { Location } from "./components/Location";
 import cityImage from "./assets/Dallas.png";
 import cloud1 from "./assets/cloud-1.png";
 import cloud2 from "./assets/cloud-2.png";
@@ -71,6 +72,7 @@ function App() {
 
   return (
     <div className="App">
+      <Location />
       <div id="container">
         <img src={cityImage} alt="city" id="city"/>
         <ForecastContainer forecast={weatherData?.daily} />
