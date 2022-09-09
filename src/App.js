@@ -4,6 +4,7 @@ import cityImage from "./assets/Dallas.png";
 import "./App.css";
 import { ForecastContainer } from "./components/ForecastContainer";
 import { CurrentConditions } from "./components/CurrentConditions";
+import { Toggle } from "./components/Toggle";
 
 function App() {
   const [coordinates, setCoordinates] = useState({ lat: null, lng: null });
@@ -16,7 +17,7 @@ function App() {
     } else {
       setTemperatureUnit("imperial");
     }
-  }
+  };
 
   const getLatLong = (city) => {
     Geocode.setApiKey(process.env.REACT_APP_GEOCODE_API_KEY);
@@ -48,9 +49,9 @@ function App() {
     )
       .then((response) => {
         if (!response.ok) {
-          throw response; 
+          throw response;
         }
-        return response.json(); 
+        return response.json();
       })
       .then((response) => {
         setWeatherData(response);
@@ -70,15 +71,14 @@ function App() {
     <div className="App">
       <div id="container">
         <img src={cityImage} alt="city" />
-        <ForecastContainer forecast={weatherData?.daily}/>
-        {weatherData && <CurrentConditions forecast={weatherData?.current} temperatureUnit={temperatureUnit}/>}
-        <div class="button b2" id="button-10">
-          <input type="checkbox" className="checkbox" onChange={handleChange} />
-          <div className="knobs">
-            <span>F°</span>
-          </div>
-          <div class="layer"></div>
-        </div>
+        <ForecastContainer forecast={weatherData?.daily} />
+        {weatherData && (
+          <CurrentConditions
+            forecast={weatherData?.current}
+            temperatureUnit={temperatureUnit}
+          />
+        )}
+        <Toggle handleChange={handleChange} />
       </div>
     </div>
   );

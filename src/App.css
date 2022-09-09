@@ -119,7 +119,7 @@
     z-index: 1;
 }
 
-#button-10 .knobs:before, #button-10 .knobs:after, #button-10 .knobs span
+#units-toggle .knobs:before, #units-toggle .knobs:after, #units-toggle .knobs span
 {
     position: absolute;
     top: 4px;
@@ -134,21 +134,21 @@
     transition: 0.3s ease all;
 }
 
-#button-10 .knobs:before
+#units-toggle .knobs:before
 {
     content: '';
     left: 4px;
     background-color: #65aed5;
 }
 
-#button-10 .knobs:after
+#units-toggle .knobs:after
 {
     content: 'C°';
     right: 4px;
     color: #4e4e4e;
 }
 
-#button-10 .knobs span
+#units-toggle .knobs span
 {
     display: inline-block;
     left: 4px;
@@ -156,23 +156,23 @@
     z-index: 1;
 }
 
-#button-10 .checkbox:checked + .knobs span
+#units-toggle .checkbox:checked + .knobs span
 {
     color: #4e4e4e;
 }
 
-#button-10 .checkbox:checked + .knobs:before
+#units-toggle .checkbox:checked + .knobs:before
 {
     left: 42px;
     background-color: #65aed5;
 }
 
-#button-10 .checkbox:checked + .knobs:after
+#units-toggle .checkbox:checked + .knobs:after
 {
     color: #fff;
 }
 
-#button-10 .checkbox:checked ~ .layer
+#units-toggle .checkbox:checked ~ .layer
 {
     background-color: #fcebeb;
 }
