@@ -75,13 +75,13 @@ function App() {
       <Location />
       <div id="container">
         <img src={cityImage} alt="city" id="city"/>
-        <ForecastContainer forecast={weatherData?.daily} />
         {weatherData && (
           <CurrentConditions
             forecast={weatherData?.current}
             temperatureUnit={temperatureUnit}
           />
         )}
+        <ForecastContainer forecast={weatherData?.daily} />
         <Toggle handleChange={handleChange} />
         <img src={cloud1} alt="cloud1" id="cloud1" />
         <img src={cloud2} alt="cloud2" id="cloud2" />
