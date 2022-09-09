@@ -4,6 +4,8 @@ import { ForecastContainer } from "./components/ForecastContainer";
 import { CurrentConditions } from "./components/CurrentConditions";
 import { Toggle } from "./components/Toggle";
 import cityImage from "./assets/Dallas.png";
+import cloud1 from "./assets/cloud-1.png";
+import cloud2 from "./assets/cloud-2.png";
 import "./App.css";
 
 function App() {
@@ -70,7 +72,7 @@ function App() {
   return (
     <div className="App">
       <div id="container">
-        <img src={cityImage} alt="city" />
+        <img src={cityImage} alt="city" id="city"/>
         <ForecastContainer forecast={weatherData?.daily} />
         {weatherData && (
           <CurrentConditions
@@ -79,6 +81,8 @@ function App() {
           />
         )}
         <Toggle handleChange={handleChange} />
+        <img src={cloud1} alt="cloud1" id="cloud1" />
+        <img src={cloud2} alt="cloud2" id="cloud2" />
       </div>
     </div>
   );

@@ -59,10 +59,22 @@
     width: 670px;
 }
 
-#container > img {
+#city {
     position: relative;
     right: 15px;
     bottom: 15px;
+}
+
+#cloud1 {
+    position: absolute;
+    top: 70px;
+    right: -80px;
+}
+
+#cloud2 {
+    position: absolute;
+    top: 150px;
+    left: -100px;
 }
 
 #forecast-container {
