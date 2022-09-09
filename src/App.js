@@ -25,7 +25,6 @@ function App() {
       (response) => {
         const { lat, lng } = response.results[0].geometry.location;
         setCoordinates({ lat, lng });
-        console.log(lat, lng);
       },
       (error) => {
         console.error(error);
@@ -49,28 +48,23 @@ function App() {
     )
       .then((response) => {
         if (!response.ok) {
-          throw response; //check the http response code and if isn't ok then throw the response as an error
+          throw response; 
         }
-        return response.json(); //parse the result as JSON
+        return response.json(); 
       })
       .then((response) => {
-        //response now contains parsed JSON ready for use
-        console.log(response);
         setWeatherData(response);
       })
       .catch((errorResponse) => {
         if (errorResponse.text) {
-          //additional error information
           errorResponse.text().then((errorMessage) => {
-            //errorMessage now returns the response body which includes the full error message
+            console.log(errorMessage);
           });
         } else {
           //no additional error information
         }
       });
   }, [coordinates, temperatureUnit]);
-
-  console.log(weatherData?.current);
 
   return (
     <div className="App">
@@ -79,8 +73,8 @@ function App() {
         <ForecastContainer forecast={weatherData?.daily}/>
         {weatherData && <CurrentConditions forecast={weatherData?.current} temperatureUnit={temperatureUnit}/>}
         <div class="button b2" id="button-10">
-          <input type="checkbox" class="checkbox" onChange={handleChange} />
-          <div class="knobs">
+          <input type="checkbox" className="checkbox" onChange={handleChange} />
+          <div className="knobs">
             <span>F°</span>
           </div>
           <div class="layer"></div>
